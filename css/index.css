@@ -1,3 +1,19 @@
 body{
     background-color: #F3E7E7;
 }
+
+  .center {
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 70%;
+  height: 110%;
+}
+
+h1{
+    color: #6E5477;
+    font-family: 'Permanent Marker', cursive;
+    margin-top: 80px;
+}
