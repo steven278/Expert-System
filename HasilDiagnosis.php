@@ -12,8 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-<div style="height: 40px;"></div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
                 <h1>Hasil Diagnosis</h1>
