@@ -21,6 +21,13 @@
                 <img src="images/Depression 3.png">
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 center">
+                <a href="index.php">
+                <button class="btn-solusi">Solusi</button>
+            </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
