@@ -1,0 +1,22 @@
+body{
+    background-color: #F3E7E7;
+}
+
+h1{
+    font-family: 'Permanent Marker', cursive;
+}
+
+#btn-home{
+    padding:0.4em 2em;
+    border-radius: 50px;
+    color:#264184;
+    background-color: #5FB2CC;
+    font-family: 'Permanent Marker', cursive;
+    font-size:1.3em;
+    border:0;
+    cursor:pointer;
+    margin:1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
