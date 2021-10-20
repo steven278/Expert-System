@@ -23,7 +23,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 center">
-                <a href="index.php">
+                <a href="Solusi.php">
                 <button class="btn-solusi">Solusi</button>
             </a>
             </div>
