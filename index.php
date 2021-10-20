@@ -12,14 +12,24 @@
 	<title>Document</title>
 </head>
 <body>
+	<div class="container mt-5">
 	<div class="row">
-	<div class="col">
+	<div class="col-md-5">
 	<img src="images/Depression 1.png" class="center">
 </div>
-<div class="col">
+<div class="col-md-5">
 	<h1>TES PARAMETER DEPRESI ANDA<img src="images/MoonStar.png" ></h1>
-	
-
+	<img src="images/PlayButton.png" id="play">
+</div>
+</div>
+<div class="row">
+	<div class="col-md-5">
+</div>
+	<div class="col-md-5" text-align="center">
+		<a href="pertanyaan.php">
+			<button id="btn-solusi">Mulai Tes</button>
+</a>
+</div>
 </div>
 </div>
 </body>

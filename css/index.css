@@ -14,13 +14,23 @@ body{
 h1{
     color: #6E5477;
     font-family: 'Permanent Marker', cursive;
-    margin-top: 80px;
+    margin-top: 160px;
 }
-#image {
+#play {
     display: block;
-    margin-left: auto;
+    margin-left: 250px;
     margin-right: auto;
-    margin-top: 40px;
-    width: 50%;
-    height: 50%;
+    width: 20%;
+    margin-top: 60px;
   }
+  #btn-solusi{
+    padding:0.4em 2em;
+    border-radius: 50px;
+    color:#264184;
+    background-color: #5FB2CC;
+    font-family: 'Permanent Marker', cursive;
+    font-size:1.3em;
+    border:0;
+    cursor:pointer;
+    margin:1em;
+}
