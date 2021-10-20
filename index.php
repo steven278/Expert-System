@@ -15,7 +15,7 @@
 	<div class="container mt-5">
 	<div class="row">
 	<div class="col-md-5">
-	<img src="images/Depression 1.svg" width="110%">
+	<img src="images/Depression 1.png" class="center">
 </div>
 <div class="col-md-7">
 	<h1>TES PARAMETER DEPRESI ANDA<img src="images/MoonStar.png"></h1>
