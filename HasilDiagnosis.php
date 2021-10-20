@@ -14,18 +14,14 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <h1>Hasil Diagnosis</h1>
+                    <a href="Solusi.php">
+                    <button id="btn-solusi">Solusi</button>
+                    </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <img src="images/Depression 3.png">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 center">
-                <a href="Solusi.php">
-                <button id="btn-solusi">Solusi</button>
-                </a>
             </div>
         </div>
     </div>

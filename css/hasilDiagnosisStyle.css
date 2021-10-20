@@ -6,10 +6,6 @@ h1{
     font-family: 'Permanent Marker', cursive;
 }
 
-.center{
-    text-align: center;
-}
-
 #btn-solusi{
     padding:0.4em 2em;
     border-radius: 50px;
@@ -20,4 +16,7 @@ h1{
     border:0;
     cursor:pointer;
     margin:1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
