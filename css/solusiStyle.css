@@ -6,6 +6,15 @@ h1{
     font-family: 'Permanent Marker', cursive;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 100%;
+    height: 140%;
+  }
+
 #btn-home{
     padding:0.4em 2em;
     border-radius: 50px;
