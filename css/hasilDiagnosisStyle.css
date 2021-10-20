@@ -7,7 +7,12 @@ h1{
 }
 
 .center{
-    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 70%;
+    height: 110%;
 }
 
 #btn-solusi{
@@ -20,4 +25,7 @@ h1{
     border:0;
     cursor:pointer;
     margin:1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
