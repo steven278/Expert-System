@@ -5,3 +5,19 @@ body{
 h1{
     font-family: 'Permanent Marker', cursive;
 }
+
+.center{
+    text-align: center;
+}
+
+#btn-solusi{
+    padding:0.4em 2em;
+    border-radius: 50px;
+    color:#264184;
+    background-color: #5FB2CC;
+    font-family: 'Permanent Marker', cursive;
+    font-size:1.3em;
+    border:0;
+    cursor:pointer;
+    margin:1em;
+}
