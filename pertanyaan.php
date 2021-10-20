@@ -49,7 +49,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-5 mt-5">
-				<img src="images/Depression 2.png" alt="Depression_image">
+				<img src="images/Depression 2.svg" alt="Depression_image" width="100%">
 			</div>
 		</div>
 	</div>

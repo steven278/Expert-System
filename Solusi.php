@@ -21,7 +21,7 @@
                     </a>
             </div>
             <div class="col-md-5">
-                <img src="images/Depression 4.svg" width="700">
+                <img src="images/Depression 4.svg" width="110%">
             </div>
         </div>
     </div>
