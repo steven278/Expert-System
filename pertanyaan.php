@@ -22,7 +22,7 @@
 					<thead class="table-info table-bordered border-dark">
 						<tr>
 							<th scope="col">Pilih Gejala</th>
-							<th scope="col">Gejala</th>
+							<th scope="col">Nama Gejala</th>
 						</tr>
 					</thead>
 					<tbody>
