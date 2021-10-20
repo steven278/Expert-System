@@ -15,13 +15,13 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-7">
-                <h1>Hasil Diagnosis</h1>
+                <h1>SOLUSI</h1>
                     <a href="index.php">
                     <button id="btn-home">Home</button>
                     </a>
             </div>
             <div class="col-md-5">
-                <img src="images/Depression 4.png">
+                <img src="images/Depression 4.svg" width="700">
             </div>
         </div>
     </div>

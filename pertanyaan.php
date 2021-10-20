@@ -44,7 +44,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<div class="col-sm-6 col-md-8 d-flex justify-content-center">
+				<div class="col-sm-6 col-md-8 mx-auto">
 					<button type="submit" id="btn-solusi">Large button</button>
 				</div>
 			</div>
