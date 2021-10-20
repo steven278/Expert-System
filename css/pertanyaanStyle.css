@@ -1,0 +1,33 @@
+body{
+    background-color: #F3E7E7;
+    
+}
+h1{
+    font-family: 'Permanent Marker', cursive;
+    color: #6E5477 ;
+    font-size: 48px;
+}
+.col-6 img{
+    /* float: left;
+    width: 50%;
+    padding: 50px; */
+    
+}
+th,td{
+    text-align: center;
+}
+
+#btn-solusi{
+    padding:0.4em 2em;
+    border-radius: 50px;
+    color:#264184;
+    background-color: #5FB2CC;
+    font-family: 'Permanent Marker', cursive;
+    font-size:1.3em;
+    border:0;
+    cursor:pointer;
+    margin:1em;
+}
+/* .center{
+    text-align: center;
+} */
