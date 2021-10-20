@@ -24,8 +24,8 @@
         <div class="row">
             <div class="col-md-6 center">
                 <a href="Solusi.php">
-                <button class="btn-solusi">Solusi</button>
-            </a>
+                <button id="btn-solusi">Solusi</button>
+                </a>
             </div>
         </div>
     </div>
