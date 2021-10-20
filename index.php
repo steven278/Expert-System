@@ -17,7 +17,9 @@
 	<img src="images/Depression 1.png" class="center">
 </div>
 <div class="col">
-	<h1>TES PARAMETER DEPRESI ANDA</h1>
+	<h1>TES PARAMETER DEPRESI ANDA<img src="images/MoonStar.png" ></h1>
+	
+
 </div>
 </div>
 </body>
