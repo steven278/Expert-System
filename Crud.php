@@ -147,13 +147,12 @@
     {
       for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) { 
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
-        echo "<br/>Nama Penyakit = ".$namaPenyakit."<br/>";
+        echo $namaPenyakit."<br>";
         for ($x=0; $x < count($daftar_cf[$namaPenyakit]); $x++) {
           $merubahIndexCF = max($daftar_cf[$namaPenyakit]);
         }
 
-        echo "Nilai CF Tertinggi Di Kandidat Penyakit = ".$merubahIndexCF."<br>";
-        echo "<br/>======================================<br/>";
+        echo $merubahIndexCF."<br>";
       }
     }
 
