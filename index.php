@@ -22,7 +22,9 @@
 </div>
 <div class="col-md-7">
 	<h1>TES PARAMETER DEPRESI ANDA<img src="images/MoonStar.png"></h1>
+	<a href="pertanyaan.php">
 	<img src="images/PlayButton.png" id="play">
+	</a>
 	<a href="pertanyaan.php">
 			<button id="btn-solusi">Mulai Tes</button>
 	</a>
