@@ -9,7 +9,7 @@
     private $_host = 'localhost';
   	private $_username = 'root';
   	private $_password = '';
-  	private $_database = 'diagnosa';
+  	private $_database = 'diagnosa_depresi';
 
   	protected $conn;
 
