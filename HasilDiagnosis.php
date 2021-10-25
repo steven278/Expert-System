@@ -1,3 +1,7 @@
+<?php if(!isset($_POST['button'])){
+    header("Location: pertanyaan.php");
+    die();
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +19,7 @@
 </head>
 <body>
 <?php include 'Navbar.php'; ?>
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-7">

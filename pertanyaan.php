@@ -1,7 +1,7 @@
 <?php 
 include 'Crud.php';
 $crud = new Crud;
-//$gejala = $crud->readGejala(); ?>
+$arrayName = $crud->readGejala(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,18 +34,17 @@ $crud = new Crud;
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+							foreach($arrayName as $r){ ?>
 							<tr>
-								<th scope="row"><input type="checkbox" name="" id=""></th>
-								<td>lorem</td>
+								<th scope="row"><input id="gejala<?php echo $r['id_gejala']; ?>" name="gejala[]" type="checkbox" value="<?php echo $r['id_gejala']; ?>"></th>
+								<td><?php echo $r['nama_gejala']; ?><br/></td>
 							</tr>
-							<tr>
-								<th scope="row"><input type="checkbox" name="" id=""></th>
-								<td>Jacob</td>
-							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 					<div class="col-sm-6 col-md-8 mx-auto">
-						<button type="submit" id="btn-solusi">Process</button>
+						<button type="submit" id="btn-solusi" name="button">Process</button>
 					</div>
 				</form>
 				
