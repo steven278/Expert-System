@@ -143,8 +143,8 @@
               <table class="table table-light table-bordered border-dark">
 						<thead class="table-info table-bordered border-dark">
 							<tr>
-								<th scope="col">Pilih Gejala</th>
-								<th scope="col">Nama Gejala</th>
+								<th scope="col">Nama Penyakit</th>
+								<th scope="col">Nilai CF</th>
 							</tr>
 						</thead>
 						<tbody>
