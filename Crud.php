@@ -170,7 +170,7 @@
         $hasilMax = max($merubahIndexCF);
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
         if ($merubahIndexCF[$i] === $hasilMax) {
-          echo "Nilai tertinggi dari perhitungan gejala adalah ".$namaPenyakit.", dengan nilai CF = ".$merubahIndexCF[$i];  
+          echo '<li>'.$namaPenyakit.'</li>';
         }
       }
 
