@@ -147,13 +147,13 @@
     {
       for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) { 
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
-        echo"<td>";
-        echo $namaPenyakit;
+        echo "<td>".$namaPenyakit."</td>"."</br>";
         for ($x=0; $x < count($daftar_cf[$namaPenyakit]); $x++) {
           $merubahIndexCF = max($daftar_cf[$namaPenyakit]);
         }
 
-        echo $merubahIndexCF."</td>";
+        echo "<td>".$merubahIndexCF."</td>"."</br>";
+        echo "<tr>"."</tr>";
       }
     }
 
