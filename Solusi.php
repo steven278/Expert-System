@@ -29,8 +29,8 @@
         <div class="row">
             <div class="col-md-7">
                 <h1>SOLUSI</h1>
-                <table>
-                    <thead>
+                <table class="table table-light table-bordered border-dark">
+                    <thead class="table-info table-bordered border-dark">
                         <th>Nama Penyakit</th>
                         <th>Solusi</th>
                     </thead>
