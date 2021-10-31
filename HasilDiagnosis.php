@@ -131,39 +131,31 @@
                             }  
                           }
                         }
-                      }
-                ?>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-md-12">
-              <table class="table table-light table-bordered border-dark" style="text-align: center;">
-      <thead class="table-info table-bordered border-dark">
-       <tr>
-        <th scope="col">Nama Penyakit</th>
-        <th scope="col">Nilai CF</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <?php   
-                  $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
-                ?>
-              </tr>
-            </tbody>
-        </table>
-            <h2 id="kemungkinan"> Kemungkinan Penyakit : </h2>
-              <ul>  
-                <?php $crud->hasilAkhir($daftar_cf,$groupKemungkinanPenyakit); ?>
-              </ul>
-              
-              <?php } ?>
-              </div>
-            </div>
-          </div>
-                <a href="Solusi.php">
-                    <button id="btn-solusi">Solusi</button>
-                </a>
+                  ?>
+                  <table class="table table-light table-bordered border-dark" style="text-align: center;">
+                    <thead class="table-info table-bordered border-dark">
+                      <tr>
+                        <th scope="col">Nama Penyakit</th>
+                        <th scope="col">Nilai CF</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <?php   
+                          $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
+                        ?>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2 style="font-family: 'Permanent Marker', cursive;"> Kemungkinan Penyakit Anda : </h2>
+                  <form name="form_diagnosis" action="Solusi.php" method="POST">
+                    <ul style="font-family: 'Source Sans Pro', sans-serif; font-size:24px;">  
+                      <?php $crud->hasilAkhir($daftar_cf,$groupKemungkinanPenyakit); ?>
+                    </ul>
+                    <button id="btn-solusi" type="submit" name="btn-solusi">Solusi</button>
+                  </form>
+                <?php } ?>
+                
             </div>
             <div class="col-md-5">
               <img src="images/Depression 3.svg" width="100%">
