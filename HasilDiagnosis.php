@@ -141,7 +141,6 @@
               <div class="row">
               <div class="col-md-12" style="text-align: center;">
               <table class="table table-light table-bordered border-dark">
-<<<<<<< HEAD
 						<thead class="table-info table-bordered border-dark">
 							<tr>
 								<th scope="col">Nama Penyakit</th>
@@ -150,16 +149,9 @@
 						</thead>
 						<tbody>
 							<tr>
-								
-                                <?php 
-                            
-=======
-                <tbody>
-                  <tr>
-                        <?php 
->>>>>>> 131098c70a93170e582ce9bc9fddad80c308053f
-                            $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
-                        ?>
+                    <?php
+                        $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
+                    ?>
                   </tr>
                 </tbody>
 				    	</table>
