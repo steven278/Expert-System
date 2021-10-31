@@ -141,31 +141,22 @@
               <div class="row">
               <div class="col-md-12" style="text-align: center;">
               <table class="table table-light table-bordered border-dark">
-						<thead class="table-info table-bordered border-dark">
-							<tr>
-								<th scope="col">Pilih Gejala</th>
-								<th scope="col">Nama Gejala</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								
-                                <?php 
-                            
+                <tbody>
+                  <tr>
+                        <?php 
                             $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
-                            $crud->hasilAkhir($daftar_cf,$groupKemungkinanPenyakit);
-                        
                         ?>
-							</tr>
-							<?php } ?>
-						</tbody>
-					</table>
+                  </tr>
+                </tbody>
+				    	</table>
+              <?php $crud->hasilAkhir($daftar_cf,$groupKemungkinanPenyakit); ?>
+          <?php } ?>
               </div>
             </div>
           </div>
-                    <a href="Solusi.php">
-                        <button id="btn-solusi">Solusi</button>
-                    </a>
+                <a href="Solusi.php">
+                    <button id="btn-solusi">Solusi</button>
+                </a>
             </div>
             <div class="col-md-5">
                 <img src="images/Depression 3.svg" width="100%">
