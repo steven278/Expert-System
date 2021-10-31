@@ -39,6 +39,10 @@
                 <?php
                   if (isset($_POST['button']))
                   {
+                    if(!isset($_POST['gejala'])){
+                        header("Location: pertanyaan.php");
+                        die(); 
+                    }
                     // group kemungkinan terdapat penyakit
                     $groupKemungkinanPenyakit = $crud->getGroupPengetahuan(implode(",", $_POST['gejala']));
                     // menampilkan kode gejala yang di pilih
