@@ -139,8 +139,8 @@
               </div>
             </div>
               <div class="row">
-              <div class="col-md-12" style="text-align: center;">
-              <table class="table table-light table-bordered border-dark">
+              <div class="col-md-12">
+              <table class="table table-light table-bordered border-dark" style="text-align: center;">
 						<thead class="table-info table-bordered border-dark">
 							<tr>
 								<th scope="col">Nama Penyakit</th>
@@ -149,14 +149,18 @@
 						</thead>
 						<tbody>
 							<tr>
-                    <?php
-                        $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
-                    ?>
-                  </tr>
-                </tbody>
-				    	</table>
-              <?php $crud->hasilAkhir($daftar_cf,$groupKemungkinanPenyakit); ?>
-          <?php } ?>
+								<?php   
+                            $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
+                ?>
+              </tr>
+            </tbody>
+				    </table>
+            <h2 id="kemungkinan"> Kemungkinan Penyakit : </h2>
+              <ul>  
+                <?php $crud->hasilAkhir($daftar_cf,$groupKemungkinanPenyakit); ?>
+              </ul>
+              
+              <?php } ?>
               </div>
             </div>
           </div>
