@@ -35,15 +35,15 @@
                         <th>Solusi</th>
                     </thead>
                     <tbody>
-                        <?php 
-                        foreach($_POST["diagnosa_penyakit"] as $r){
-                        echo $r;
+                        <?php
+                        foreach(array_combine($_POST["diagnosa_penyakit"], $_POST["solusi"] ) as $dp => $s ){
+                        // echo $r;
+                        echo    "<tr>
+                                    <td>$dp</td>
+                                    <td>$s</td>
+                                    
+                                ";
                     } ?>
-                    <?php 
-                        foreach($_POST["solusi"] as $s){
-                            echo $s;
-                        }
-                    ?>
                     </tbody>
                 </table>
                 
