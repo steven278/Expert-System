@@ -1,9 +1,13 @@
 <?php
+    if(!isset($_POST['btn-solusi'])){
+        header("Location: pertanyaan.php");
+        die(); 
+    }
     // untuk memanggil file
     include 'Crud.php';
     // untuk mendeklarasikan class menjadi variabel
     $crud = new Crud();
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,13 +29,24 @@
         <div class="row">
             <div class="col-md-7">
                 <h1>SOLUSI</h1>
-                <?php if(isset($_POST['btn-solusi'])){
-                    
-
-                }else{
-                    header("Location: pertanyaan.php");
-                    die(); 
-                } ?>
+                <table>
+                    <thead>
+                        <th>Nama Penyakit</th>
+                        <th>Solusi</th>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        foreach($_POST["diagnosa_penyakit"] as $r){
+                        echo $r;
+                    } ?>
+                    <?php 
+                        foreach($_POST["solusi"] as $s){
+                            echo $s;
+                        }
+                    ?>
+                    </tbody>
+                </table>
+                
                     <a href="index.php">
                     <button id="btn-home">Home</button>
                     </a>

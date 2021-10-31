@@ -169,11 +169,14 @@
         }
       }
       $penyakits[] = "";
+      // $solusis[] = "";
       for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) { 
         $hasilMax = max($merubahIndexCF);
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
         if ($merubahIndexCF[$i] === $hasilMax) {
-          echo '<li id="nama_penyakit" name="diagnosa_penyakit" value="'.$namaPenyakit.'">'.$namaPenyakit.'</li>';
+          $penyakits[$i] = $namaPenyakit;
+          echo '<li>'.$penyakits[$i].'</li>';
+          echo '<input type="hidden" name="diagnosa_penyakit[]" value="'.$penyakits[$i].'">';
       
           $sql = "SELECT solusi FROM penyakit
           WHERE nama_penyakit = '$namaPenyakit'";      
@@ -184,8 +187,10 @@
             while ($row = $result->fetch_assoc()) {
               $rows[] = $row;
             }
-            echo '<input type="hidden" name="solusi">'.$rows[$i]['solusi'].'</input>';
-
+            // print_r($rows);
+            // die();
+            echo '<input type="hidden" name="solusi[]" value="'.$rows[$i]['solusi'].'">';
+            
           }
         }
       }
