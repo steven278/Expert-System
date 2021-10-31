@@ -1,3 +1,9 @@
+<?php
+    // untuk memanggil file
+    include 'Crud.php';
+    // untuk mendeklarasikan class menjadi variabel
+    $crud = new Crud();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +25,13 @@
         <div class="row">
             <div class="col-md-7">
                 <h1>SOLUSI</h1>
+                <?php if(isset($_POST['btn-solusi'])){
+                    
+
+                }else{
+                    header("Location: pertanyaan.php");
+                    die(); 
+                } ?>
                     <a href="index.php">
                     <button id="btn-home">Home</button>
                     </a>

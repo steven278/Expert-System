@@ -20,6 +20,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link href="css/hasilDiagnosisStyle.css" rel="stylesheet">
     <title>DSION-Result</title>
 </head>
@@ -29,147 +32,133 @@
         <div class="row">
             <div class="col-md-7">
                 <h1>Hasil Diagnosis</h1>
-                <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div row>
-              <div class="col-md-12" style="text-align: center;">
                 <?php
-                  if (isset($_POST['button']))
-                  {
-                    if(!isset($_POST['gejala'])){
-                        header("Location: pertanyaan.php");
-                        die(); 
-                    }
-                    // group kemungkinan terdapat penyakit
-                    $groupKemungkinanPenyakit = $crud->getGroupPengetahuan(implode(",", $_POST['gejala']));
-                    // menampilkan kode gejala yang di pilih
-                    $sql = $_POST['gejala'];
-                    if (isset($sql)) {
-                      // mencari data penyakit kemungkinan dari gejala
-                      for ($h=0; $h < count($sql); $h++) {
-                        $kemungkinanPenyakit[] = $crud->getKemungkinanPenyakit($sql[$h]);
-                        for ($x=0; $x < count($kemungkinanPenyakit[$h]); $x++) {
-                          for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) {
-                            $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
-                            if ($kemungkinanPenyakit[$h][$x]['nama_penyakit'] == $namaPenyakit) {
-                              // list di kemungkinan dari gejala
-                              $listIdKemungkinan[$namaPenyakit][] = $kemungkinanPenyakit[$h][$x]['id_pengetahuan'];
+                    if (isset($_POST['button']))
+                    {
+                      if(!isset($_POST['gejala'])){
+                          header("Location: pertanyaan.php");
+                          die(); 
+                      }
+                      // group kemungkinan terdapat penyakit
+                      $groupKemungkinanPenyakit = $crud->getGroupPengetahuan(implode(",", $_POST['gejala']));
+                      // menampilkan kode gejala yang di pilih
+                      $sql = $_POST['gejala'];
+                      if (isset($sql)) {
+                        // mencari data penyakit kemungkinan dari gejala
+                        for ($h=0; $h < count($sql); $h++) {
+                          $kemungkinanPenyakit[] = $crud->getKemungkinanPenyakit($sql[$h]);
+                          for ($x=0; $x < count($kemungkinanPenyakit[$h]); $x++) {
+                            for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) {
+                              $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
+                              if ($kemungkinanPenyakit[$h][$x]['nama_penyakit'] == $namaPenyakit) {
+                                // list di kemungkinan dari gejala
+                                $listIdKemungkinan[$namaPenyakit][] = $kemungkinanPenyakit[$h][$x]['id_pengetahuan'];
+                              }
                             }
                           }
                         }
-                      }
 
-                      $id_penyakit_terbesar = '';
-                      $nama_penyakit_terbesar = '';
-                      // list penyakit kemungkinan
-                      for ($h=0; $h < count($groupKemungkinanPenyakit); $h++) { 
-                        $namaPenyakit = $groupKemungkinanPenyakit[$h]['nama_penyakit'];
-                         "<br/>Proses Penyakit ".$h.".".$namaPenyakit."<br/>==============<br/>";
-                        
-                        // list penyakit kemungkinan dari gejala
-                        for ($x=0; $x < count($listIdKemungkinan[$namaPenyakit]); $x++) { 
-                          $daftarKemungkinanPenyakit = $crud->getListPenyakit($listIdKemungkinan[$namaPenyakit][$x]);
+                        $id_penyakit_terbesar = '';
+                        $nama_penyakit_terbesar = '';
+                        // list penyakit kemungkinan
+                        for ($h=0; $h < count($groupKemungkinanPenyakit); $h++) { 
+                          $namaPenyakit = $groupKemungkinanPenyakit[$h]['nama_penyakit'];
+                          "<br/>Proses Penyakit ".$h.".".$namaPenyakit."<br/>==============<br/>";
                           
-                           "<br/>proses ".$x."<br/>------------------------------------<br/>";
-                                  
-                          for ($i=0; $i < count($daftarKemungkinanPenyakit); $i++) {
-                              
-                              if (count($listIdKemungkinan) == 1) {
-                                 "Jumlah Gejala = ".
-                                  count($listIdKemungkinan[$namaPenyakit])."<br/>";
+                          // list penyakit kemungkinan dari gejala
+                          for ($x=0; $x < count($listIdKemungkinan[$namaPenyakit]); $x++) { 
+                            $daftarKemungkinanPenyakit = $crud->getListPenyakit($listIdKemungkinan[$namaPenyakit][$x]);
+                            
+                            "<br/>proses ".$x."<br/>------------------------------------<br/>";
                                     
-                                // bila list kemungkinan terdapat 1
-                                $mb = $daftarKemungkinanPenyakit[$i]['mb'];
-                                $md = $daftarKemungkinanPenyakit[$i]['md'];
-                                $cf = $mb - $md;
-                                $daftar_cf[$namaPenyakit][] = $cf;
-
-                                 "<br/>proses 1<br/>------------------------<br/>";
-                                 "mb = ".$mb."<br/>";
-                               "md = ".$md."<br/>";
-                                "cf = mb - md = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
-                                // end bila list kemungkinan terdapat 1
-                              } else {
-                                // list kemungkinanan lebih dari satu
-                                if ($x == 0)
-                                {
+                            for ($i=0; $i < count($daftarKemungkinanPenyakit); $i++) {
+                                
+                                if (count($listIdKemungkinan) == 1) {
                                   "Jumlah Gejala = ".
-                                  count($listIdKemungkinan[$namaPenyakit])."<br/>";
-                                  // record md dan mb sebelumnya
-                                  $mblama = $daftarKemungkinanPenyakit[$i]['mb'];
-                                  $mdlama = $daftarKemungkinanPenyakit[$i]['md'];
-                                  // md yang di esekusi
+                                    count($listIdKemungkinan[$namaPenyakit])."<br/>";
+                                      
+                                  // bila list kemungkinan terdapat 1
                                   $mb = $daftarKemungkinanPenyakit[$i]['mb'];
                                   $md = $daftarKemungkinanPenyakit[$i]['md'];
-                                  "<br/>";
-                                   "mbbaru = ".$mb."<br/>";
-                                  "mdbaru = ".$md."<br/>";
                                   $cf = $mb - $md;
-                                  "cf = mb - md = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
-
                                   $daftar_cf[$namaPenyakit][] = $cf;
-                                } 
-                                else
-                                {
-                                  $mbbaru = $daftarKemungkinanPenyakit[$i]['mb'];
-                                  $mdbaru = $daftarKemungkinanPenyakit[$i]['md'];
-                                   "mbbaru = ".$mbbaru."<br/>";
-                                   "mdbaru = ".$mdbaru."<br/>";
-                                  $mbsementara = $mblama + ($mbbaru * (1 - $mblama));
-                                  $mdsementara = $mdlama + ($mdbaru * (1 - $mdlama));
-                                   "mbsementara = mblama + (mbbaru * (1 - mblama)) = $mblama + ($mbbaru * (1 - $mblama)) = ".$mbsementara."<br/>";
-                                   "mdsementara = mdlama + (mdbaru * (1 - mdlama)) = $mdlama + ($mdbaru * (1 - $mdlama)) = ".$mdsementara."<br/>";
 
-                                  $mb = $mbsementara;
-                                  $md = $mdsementara;
-                                  $cf = $mb - $md;
-                                   "cf = mblama - mdlama = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
-                                  $daftar_cf[$namaPenyakit][] = $cf;;
+                                  "<br/>proses 1<br/>------------------------<br/>";
+                                  "mb = ".$mb."<br/>";
+                                "md = ".$md."<br/>";
+                                  "cf = mb - md = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
+                                  // end bila list kemungkinan terdapat 1
+                                } else {
+                                  // list kemungkinanan lebih dari satu
+                                  if ($x == 0)
+                                  {
+                                    "Jumlah Gejala = ".
+                                    count($listIdKemungkinan[$namaPenyakit])."<br/>";
+                                    // record md dan mb sebelumnya
+                                    $mblama = $daftarKemungkinanPenyakit[$i]['mb'];
+                                    $mdlama = $daftarKemungkinanPenyakit[$i]['md'];
+                                    // md yang di esekusi
+                                    $mb = $daftarKemungkinanPenyakit[$i]['mb'];
+                                    $md = $daftarKemungkinanPenyakit[$i]['md'];
+                                    "<br/>";
+                                    "mbbaru = ".$mb."<br/>";
+                                    "mdbaru = ".$md."<br/>";
+                                    $cf = $mb - $md;
+                                    "cf = mb - md = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
+
+                                    $daftar_cf[$namaPenyakit][] = $cf;
+                                  } 
+                                  else
+                                  {
+                                    $mbbaru = $daftarKemungkinanPenyakit[$i]['mb'];
+                                    $mdbaru = $daftarKemungkinanPenyakit[$i]['md'];
+                                    "mbbaru = ".$mbbaru."<br/>";
+                                    "mdbaru = ".$mdbaru."<br/>";
+                                    $mbsementara = $mblama + ($mbbaru * (1 - $mblama));
+                                    $mdsementara = $mdlama + ($mdbaru * (1 - $mdlama));
+                                    "mbsementara = mblama + (mbbaru * (1 - mblama)) = $mblama + ($mbbaru * (1 - $mblama)) = ".$mbsementara."<br/>";
+                                    "mdsementara = mdlama + (mdbaru * (1 - mdlama)) = $mdlama + ($mdbaru * (1 - $mdlama)) = ".$mdsementara."<br/>";
+
+                                    $mb = $mbsementara;
+                                    $md = $mdsementara;
+                                    $cf = $mb - $md;
+                                    "cf = mblama - mdlama = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
+                                    $daftar_cf[$namaPenyakit][] = $cf;;
+                                  }
+                                  // end list kemungkinanan lebih dari satu
                                 }
-                                // end list kemungkinanan lebih dari satu
                               }
-                            }
-                          }  
+                            }  
+                          }
                         }
-                      }
-                ?>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-md-12">
-              <table class="table table-light table-bordered border-dark" style="text-align: center;">
-						<thead class="table-info table-bordered border-dark">
-							<tr>
-								<th scope="col">Nama Penyakit</th>
-								<th scope="col">Nilai CF</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<?php   
-                            $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
-                ?>
-              </tr>
-            </tbody>
-				    </table>
-            <h2 id="kemungkinan"> Kemungkinan Penyakit : </h2>
-              <ul>  
-                <?php $crud->hasilAkhir($daftar_cf,$groupKemungkinanPenyakit); ?>
-              </ul>
-              
-              <?php } ?>
-              </div>
-            </div>
-          </div>
-                <a href="Solusi.php">
-                    <button id="btn-solusi">Solusi</button>
-                </a>
+                  ?>
+                  <table class="table table-light table-bordered border-dark" style="text-align: center;">
+                    <thead class="table-info table-bordered border-dark">
+                      <tr>
+                        <th scope="col">Nama Penyakit</th>
+                        <th scope="col">Nilai CF</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <?php   
+                          $crud->hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit);
+                        ?>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2 style="font-family: 'Permanent Marker', cursive;"> Kemungkinan Penyakit Anda : </h2>
+                  <form name="form_diagnosis" action="Solusi.php" method="POST">
+                    <ul style="font-family: 'Source Sans Pro', sans-serif; font-size:24px;">  
+                      <?php $crud->hasilAkhir($daftar_cf,$groupKemungkinanPenyakit); ?>
+                    </ul>
+                    <button id="btn-solusi" type="submit" name="btn-solusi">Solusi</button>
+                  </form>
+                <?php } ?>
+                
             </div>
             <div class="col-md-5">
-                <img src="images/Depression 3.svg" width="100%">
+              <img src="images/Depression 3.svg" width="100%">
             </div>
         </div>
     </div>

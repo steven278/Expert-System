@@ -158,6 +158,8 @@
       }
     }
 
+    
+
     public function hasilAkhir($daftar_cf,$groupKemungkinanPenyakit)
     {
       for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) { 
@@ -166,12 +168,25 @@
           $merubahIndexCF[$i] = max($daftar_cf[$namaPenyakit]);
         }
       }
-
+      $penyakits[] = "";
       for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) { 
         $hasilMax = max($merubahIndexCF);
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
         if ($merubahIndexCF[$i] === $hasilMax) {
-          echo '<li>'.$namaPenyakit.'</li>';
+          echo '<li id="nama_penyakit" name="diagnosa_penyakit" value="'.$namaPenyakit.'">'.$namaPenyakit.'</li>';
+      
+          $sql = "SELECT solusi FROM penyakit
+          WHERE nama_penyakit = '$namaPenyakit'";      
+          $result = $this->conn->query($sql);
+          if (isset($result)) {
+            // merubah data tabel menjadi array
+            $row = [];
+            while ($row = $result->fetch_assoc()) {
+              $rows[] = $row;
+            }
+            echo '<input type="hidden" name="solusi">'.$rows[$i]['solusi'].'</input>';
+
+          }
         }
       }
 

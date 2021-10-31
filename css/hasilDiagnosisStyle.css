@@ -6,10 +6,6 @@ h1{
     font-family: 'Permanent Marker', cursive;
 }
 
-#kemungkinan{
-    font-family: 'Permanent Marker', cursive;
-}
-
 #btn-solusi{
     padding:0.4em 2em;
     border-radius: 50px;
@@ -23,4 +19,8 @@ h1{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#nama_penyakit{
+    font-family: 'Source Sans Pro', sans-serif;
 }
