@@ -187,10 +187,9 @@
             while ($row = $result->fetch_assoc()) {
               $rows[] = $row;
             }
-            // print_r($rows);
+            print_r($rows);
             // die();
-            echo '<input type="hidden" name="solusi[]" value="'.$rows[$i]['solusi'].'">';
-            
+            echo '<input type="hidden" name="solusi[]" value="'.$rows[$i]["solusi"].'">';
           }
         }
       }
