@@ -37,7 +37,7 @@ $arrayName = $crud->readGejala(); ?>
 							<?php
 							foreach($arrayName as $r){ ?>
 							<tr>
-								<th scope="row"><input id="gejala<?php echo $r['id_gejala']; ?>" name="gejala[]" type="checkbox" value="<?php echo $r['id_gejala']; ?>"></th>
+								<th scope="row"><input id="gejala<?php echo $r['id_gejala']; ?>" name="gejala[]" type="checkbox" value="<?php echo $r['id_gejala']; ?>" style="width: 1.5em; height:1.5em;"></th>
 								<td><?php echo $r['nama_gejala']; ?><br/></td>
 							</tr>
 							<?php } ?>
