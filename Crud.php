@@ -152,7 +152,7 @@
         for ($x=0; $x < count($daftar_cf[$namaPenyakit]); $x++) {
           $merubahIndexCF = max($daftar_cf[$namaPenyakit])*100;
         }
-        echo "<td>".$merubahIndexCF." %"."</td>";
+        echo "<td>".number_format((float)$merubahIndexCF, 2, '.', '')." %"."</td>";
         echo "<tr>"."</tr>";
       }
     }
