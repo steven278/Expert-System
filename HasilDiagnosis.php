@@ -80,14 +80,14 @@
                                   // bila list kemungkinan terdapat 1
                                   $mb = $daftarKemungkinanPenyakit[$i]['mb'];
                                   $md = $daftarKemungkinanPenyakit[$i]['md'];
-                                  $cf = $mb - $md;
+                                  if($mb < $md){
+                                    $cf = ($mb - $md)/(1-$mb);
+                                  } else {
+                                      $cf = ($mb - $md)/(1-$md);
+                                  }
+                                  
                                   $daftar_cf[$namaPenyakit][] = $cf;
 
-                                  "<br/>proses 1<br/>------------------------<br/>";
-                                  "mb = ".$mb."<br/>";
-                                "md = ".$md."<br/>";
-                                  "cf = mb - md = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
-                                  // end bila list kemungkinan terdapat 1
                                 } else {
                                   // list kemungkinanan lebih dari satu
                                   if ($x == 0)
@@ -103,7 +103,13 @@
                                     "<br/>";
                                     "mbbaru = ".$mb."<br/>";
                                     "mdbaru = ".$md."<br/>";
-                                    $cf = $mb - $md;
+                                    
+                                    
+                                    if($mb < $md){
+                                      $cf = ($mb - $md)/(1-$mb);
+                                    } else {
+                                        $cf = ($mb - $md)/(1-$md);
+                                    }
                                     "cf = mb - md = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
 
                                     $daftar_cf[$namaPenyakit][] = $cf;
@@ -121,7 +127,11 @@
 
                                     $mb = $mbsementara;
                                     $md = $mdsementara;
-                                    $cf = $mb - $md;
+                                    if($mb < $md){
+                                      $cf = ($mb - $md)/(1-$mb);
+                                    } else {
+                                        $cf = ($mb - $md)/(1-$md);
+                                    }
                                     "cf = mblama - mdlama = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
                                     $daftar_cf[$namaPenyakit][] = $cf;;
                                   }
