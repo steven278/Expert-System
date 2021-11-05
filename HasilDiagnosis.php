@@ -57,80 +57,33 @@
                             }
                           }
                         }
-
+                        
                         $id_penyakit_terbesar = '';
                         $nama_penyakit_terbesar = '';
                         // list penyakit kemungkinan
                         for ($h=0; $h < count($groupKemungkinanPenyakit); $h++) { 
-                          $namaPenyakit = $groupKemungkinanPenyakit[$h]['nama_penyakit'];
-                          "<br/>Proses Penyakit ".$h.".".$namaPenyakit."<br/>==============<br/>";
-                          
+                          $namaPenyakit = $groupKemungkinanPenyakit[$h]['nama_penyakit'];  
                           // list penyakit kemungkinan dari gejala
-                          for ($x=0; $x < count($listIdKemungkinan[$namaPenyakit]); $x++) { 
+                          for ($x=0; $x < count($listIdKemungkinan[$namaPenyakit]); $x++) {
                             $daftarKemungkinanPenyakit = $crud->getListPenyakit($listIdKemungkinan[$namaPenyakit][$x]);
-                            
-                            "<br/>proses ".$x."<br/>------------------------------------<br/>";
-                                    
-                            for ($i=0; $i < count($daftarKemungkinanPenyakit); $i++) {
-                                
-                                if (count($listIdKemungkinan) == 1) {
-                                  "Jumlah Gejala = ".
-                                    count($listIdKemungkinan[$namaPenyakit])."<br/>";
-                                      
-                                  // bila list kemungkinan terdapat 1
-                                  $mb = $daftarKemungkinanPenyakit[$i]['mb'];
-                                  $md = $daftarKemungkinanPenyakit[$i]['md'];
-                                  $cf = $mb - $md;
-                                  $daftar_cf[$namaPenyakit][] = $cf;
-
-                                  "<br/>proses 1<br/>------------------------<br/>";
-                                  "mb = ".$mb."<br/>";
-                                "md = ".$md."<br/>";
-                                  "cf = mb - md = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
-                                  // end bila list kemungkinan terdapat 1
-                                } else {
-                                  // list kemungkinanan lebih dari satu
-                                  if ($x == 0)
-                                  {
-                                    "Jumlah Gejala = ".
-                                    count($listIdKemungkinan[$namaPenyakit])."<br/>";
-                                    // record md dan mb sebelumnya
-                                    $mblama = $daftarKemungkinanPenyakit[$i]['mb'];
-                                    $mdlama = $daftarKemungkinanPenyakit[$i]['md'];
-                                    // md yang di esekusi
-                                    $mb = $daftarKemungkinanPenyakit[$i]['mb'];
-                                    $md = $daftarKemungkinanPenyakit[$i]['md'];
-                                    "<br/>";
-                                    "mbbaru = ".$mb."<br/>";
-                                    "mdbaru = ".$md."<br/>";
-                                    $cf = $mb - $md;
-                                    "cf = mb - md = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
-
-                                    $daftar_cf[$namaPenyakit][] = $cf;
-                                  } 
-                                  else
-                                  {
-                                    $mbbaru = $daftarKemungkinanPenyakit[$i]['mb'];
-                                    $mdbaru = $daftarKemungkinanPenyakit[$i]['md'];
-                                    "mbbaru = ".$mbbaru."<br/>";
-                                    "mdbaru = ".$mdbaru."<br/>";
-                                    $mbsementara = $mblama + ($mbbaru * (1 - $mblama));
-                                    $mdsementara = $mdlama + ($mdbaru * (1 - $mdlama));
-                                    "mbsementara = mblama + (mbbaru * (1 - mblama)) = $mblama + ($mbbaru * (1 - $mblama)) = ".$mbsementara."<br/>";
-                                    "mdsementara = mdlama + (mdbaru * (1 - mdlama)) = $mdlama + ($mdbaru * (1 - $mdlama)) = ".$mdsementara."<br/>";
-
-                                    $mb = $mbsementara;
-                                    $md = $mdsementara;
-                                    $cf = $mb - $md;
-                                    "cf = mblama - mdlama = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
-                                    $daftar_cf[$namaPenyakit][] = $cf;;
-                                  }
-                                  // end list kemungkinanan lebih dari satu
-                                }
+                              $mb = $daftarKemungkinanPenyakit[0]['mb'];
+                              $md = $daftarKemungkinanPenyakit[0]['md'];
+                              if($mb < $md){
+                                $cf = ($mb - $md)/(1-$mb);
+                              }else{
+                                $cf = ($mb - $md)/(1-$md);
                               }
-                            }  
-                          }
+                            if($x == 0){
+                              $daftar_cf[$namaPenyakit][] = $cf;
+                              $cf_accumulative = $cf;
+                            }else{
+                              $cf_baru = $cf_accumulative + ($cf*(1-$cf_accumulative));
+                              $cf_accumulative = $cf_baru;
+                              $daftar_cf[$namaPenyakit][] = $cf_baru;
+                            }
+                          }  
                         }
+                      }
                   ?>
                   <table class="table table-light table-bordered border-dark" style="text-align: center;">
                     <thead class="table-info table-bordered border-dark">
