@@ -22,6 +22,7 @@ $arrayName = $crud->readGejala(); ?>
 	<div class="container mt-5">
 		<div class="row">
 			<h1 class="mb-5">GEJALA</h1>
+			<h3 class="mb-5" style="font-family: 'Permanent Marker', cursive;color: #6E5477 ;font-size: 24px;">Silahkan checklist minimal 5 gejala yang anda alami</h3>
 			<div class="col-sm-6 col-md-7">
 				<!-- <table class="table table-light table-bordered border-dark">
 					<thead class="table-primary table-bordered border-dark"> -->
@@ -29,8 +30,8 @@ $arrayName = $crud->readGejala(); ?>
 					<table class="table table-light table-bordered border-dark">
 						<thead class="table-info table-bordered border-dark">
 							<tr>
-								<th scope="col">Pilih Gejala</th>
-								<th scope="col">Nama Gejala</th>
+								<th scope="col">Checklist</th>
+								<th scope="col">Gejala yang dirasakan</th>
 							</tr>
 						</thead>
 						<tbody>

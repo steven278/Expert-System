@@ -2,11 +2,13 @@ body{
     background-color: #F3E7E7;
     
 }
+
 h1{
     font-family: 'Permanent Marker', cursive;
     color: #6E5477 ;
     font-size: 48px;
 }
+
 .col-6 img{
     /* float: left;
     width: 50%;

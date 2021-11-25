@@ -39,6 +39,10 @@
                           header("Location: pertanyaan.php");
                           die(); 
                       }
+                      if(count($_POST['gejala']) < 5){
+                        header("Location: pertanyaan.php");
+                        die(); 
+                      }
                       // group kemungkinan terdapat penyakit
                       $groupKemungkinanPenyakit = $crud->getGroupPengetahuan(implode(",", $_POST['gejala']));
                       // menampilkan kode gejala yang di pilih

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Okt 2021 pada 15.17
+-- Waktu pembuatan: 22 Nov 2021 pada 09.25
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.10
 
@@ -37,34 +37,34 @@ CREATE TABLE `gejala` (
 --
 
 INSERT INTO `gejala` (`id_gejala`, `nama_gejala`) VALUES
-(1, 'Sedih'),
-(2, 'Kelelahan melakukan aktivitas'),
-(3, 'kurang berkonsentrasi'),
+(1, 'Sering merasa sedih'),
+(2, 'Kelelahan melakukan \r\naktivitas'),
+(3, 'Kurang berkonsentrasi'),
 (4, 'Bosan atau jenuh'),
 (5, 'Sering melamun'),
 (6, 'Tidak bersemangat'),
 (7, 'Sering galau'),
-(8, 'Pesimis mengenai masa depan'),
-(9, 'Sering menangis dengan alasan yang tidak jelas '),
-(10, 'Mempunyai gangguan tidur atau insomnia'),
+(8, 'Pesimis mengenai masa \r\ndepan'),
+(9, 'Sering menangis dengan \r\nalasan yang tidak jelas '),
+(10, 'Pola tidur terganggu'),
 (11, 'Sering cemas'),
 (12, 'Kecewa dengan diri sendiri'),
-(13, 'Terganggu dengan segala hal'),
+(13, 'Terganggu dengan segala \r\nhal'),
 (14, 'Lebih sering terlihat murung'),
-(15, 'Kehilangan minat dalam kegiatan atau hobi yang dulu disenangi'),
+(15, 'Kehilangan minat dalam \r\nkegiatan atau hobi yang dulu \r\ndisenangi'),
 (16, 'Kesepian'),
-(17, 'Mempunyai perasaan bersalah'),
-(18, 'Mempunyai perasaan dihukum'),
-(19, 'Mempunyai perasaan benci terhadap diri sendiri'),
+(17, 'Mempunyai perasaan \r\nbersalah'),
+(18, 'Mempunyai perasaan \r\ndihukum'),
+(19, 'Mempunyai perasaan benci \r\nterhadap diri sendiri '),
 (20, 'Mudah tersinggung'),
 (21, 'Kehilangan selera makan'),
-(22, 'Khawatir tentang penampilan'),
-(23, 'Sangat sensitif atau mudah marah terhadap orang di sekitar'),
+(22, 'Khawatir tentang \r\npenampilan'),
+(23, 'Sangat sensitif atau mudah \r\nmarah terhadap orang \r\ndisekitar'),
 (24, 'Lebih suka menyendiri'),
-(25, 'Mempunyai pikiran untuk bunuh diri'),
+(25, 'Mempunyai pikiran untuk \r\nbunuh diri'),
 (26, 'Sulit mengambil keputusan'),
-(27, 'Sulit melakukan kegiatan dengan baik'),
-(28, 'Ada perubahan penambahan atau penurunan berat badan'),
+(27, 'Sulit melakukan kegiatan \r\ndengan baik'),
+(28, 'Ada perubahan penambahan \r\natau penurunan berat badan'),
 (29, 'Kurang percaya diri');
 
 -- --------------------------------------------------------
@@ -93,8 +93,7 @@ INSERT INTO `pengetahuan` (`id_pengetahuan`, `kode_penyakit`, `id_gejala`, `mb`,
 (5, 'M', 5, 0.75, 0.25),
 (6, 'M', 7, 0.75, 0.25),
 (7, 'R', 1, 0.75, 0.25),
-(8, 'R', 2, 0.75, 0.25),
-(9, 'R', 6, 0.7, 0.3),
+(9, 'M', 6, 0.7, 0.3),
 (10, 'R', 8, 0.65, 0.35),
 (11, 'R', 10, 0.75, 0.25),
 (12, 'R', 11, 0.7, 0.3),
@@ -135,7 +134,7 @@ CREATE TABLE `penyakit` (
   `id_penyakit` int(11) NOT NULL,
   `nama_penyakit` varchar(100) NOT NULL,
   `kode_penyakit` varchar(100) NOT NULL,
-  `solusi` varchar(250) NOT NULL
+  `solusi` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -143,10 +142,10 @@ CREATE TABLE `penyakit` (
 --
 
 INSERT INTO `penyakit` (`id_penyakit`, `nama_penyakit`, `kode_penyakit`, `solusi`) VALUES
-(1, 'Gangguan Mood', 'M', 'Olahraga setiap pagi dan tersenyum serta selalu berpikir positif'),
-(2, 'Depresi Ringan', 'R', 'Olahraga, melakukan terapi cahaya, menulis suasana hati dalam buku harian dan menyimpannya, dapatkan dukungan dari kelompok atau orang terdekat'),
-(3, 'Depresi Sedang', 'S', 'Meditasi, Mencari teman curhat, mengalihkan pikiran dengan melakukan hobi, konsultasi ke psikiater atau psikolog klinis '),
-(4, 'Depresi Berat', 'B', 'Rutin berolahraga, berpikir positif, meditasi, terapi cahaya, terapi kognitif, konsultasi ke psikiater atau psikolog klinis');
+(1, 'Gangguan Mood', 'M', 'Untuk mengatasi gangguan mood, yang anda dapat lakukan adalah menjalani gaya hidup sehat. Gaya hidup sehat yang dimaksud adalah olahraga yang teratur, tidur yang cukup, mengkonsumsi makanan sehat, dan mengelola stress agar dapat menjaga mood agar tetap stabil'),
+(2, 'Depresi Ringan', 'R', 'Untuk mengatasi depresi ringan, anda harus mencoba untuk mencoba melakukan hal-hal baru yang menyenangkan dengan orang-orang terdekat, sehingga apabila jika anda merasa sulit, orang-orang terdekat anda dapat membantu anda mengatasi depresi ringan yang anda alami serta dapat meningkatkan suasana hati. Selain itu, anda juga dapat melakukan olahraga yang intens karena olahraga dapat memicu otak untuk mengeluarkan hormon endorfin yang dapat mengurangi stress. '),
+(3, 'Depresi Sedang', 'S', 'Untuk mengatasi depresi sedang, anda dapat mencari teman-teman terdekat agar suasana hati dapat merasa lebih baik. Selain itu kamu juga dapat mengunjungi psikolog klinis untuk menceritakan apa yang anda alami serta mendapatkan nasihat yang tepat untuk depresi sedang yang anda alami. Untuk membantu meringankan depresi anda, anda dapat melakukan meditasi dan terapi cahaya secara rutin.'),
+(4, 'Depresi Berat', 'B', 'Untuk mengatasi depresi berat, anda harus mengunjungi psikolog maupun psikiater terdekat untuk melakukan konsultasi dan pengecekan terhadap depresi yang anda alami serta mendapatkan terapi maupun pengobatan yang tepat dari psikiater atau psikolog yang anda kunjungi. Selain itu, penyesuaian gaya hidup juga diperlukan untuk membantu meringankan gejala-gejalanya. Anda juga perlu mencari dukungan dari keluarga atau orang-orang terdekat anda agar mereka dapat memberikan ketenangan dan mempercepat proses penyembuhan depresi berat yang anda alami');
 
 --
 -- Indexes for dumped tables
